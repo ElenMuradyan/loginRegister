@@ -27,7 +27,7 @@ const Register= () => {
 
     return (
         <div id='register'>
-        <img src={ regsterImage }></img>
+        <img src={ regsterImage } alt='Register'></img>
         <Form onFinish={ handleRegister } layout='vertical' form={ form }>
             <p>REGISTER</p>
             <Form.Item

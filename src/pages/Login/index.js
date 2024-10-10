@@ -26,7 +26,7 @@ const Login = () => {
 
         return(
         <div id='login'>
-                <img src={loginImage}></img>
+                <img src={loginImage} alt="login"></img>
         <Form layout='vertical' onFinish={ handleLogin } form={ form }>
                 <p>LOGIN</p>
                 <Form.Item 
