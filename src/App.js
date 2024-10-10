@@ -2,6 +2,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import MainLayout from "./layouts/Main";
+import "./styles/global.css";
 
 const App=()=>{
   return (

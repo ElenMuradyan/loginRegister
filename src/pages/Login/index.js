@@ -4,6 +4,8 @@ import { ROUTE_CONSTANTS } from '../../core/utilis/constants';
 import { auth } from '../../services/firebase'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import loginImage from '../../Imgs/login.jpg'
+import './index.css'
 
 const Login = () => {
      const [ form ] = Form.useForm();
@@ -20,11 +22,13 @@ const Login = () => {
                 }finally{
                         setLoading( false );
                 };
-      };
+        };
 
         return(
-        <div>
-        <Form layput='vertical' onFinish={ handleLogin } form={ form }>
+        <div id='login'>
+                <img src={loginImage}></img>
+        <Form layout='vertical' onFinish={ handleLogin } form={ form }>
+                <p>LOGIN</p>
                 <Form.Item 
                 label='Email'
                 name='email'
@@ -46,8 +50,9 @@ const Login = () => {
                 >
                 <Input.Password placeholder='Password'/>
                 </Form.Item>
-                <Button type='primary' htmlType='submit' loading={ loading }>Sign In</Button>
-
+                <Button className='button' htmlType='submit' loading={ loading }>Sign In</Button>
+                <br/>
+                <span>Don't have an account?</span>
                 <Link to={ROUTE_CONSTANTS.REGISTER}>Sign up</Link>
 
         </Form>

@@ -1,10 +1,12 @@
 import React from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebase";
-import { Form, Button, Input } from 'antd';
+import { Form, Button, Input, Row, Col } from 'antd';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ROUTE_CONSTANTS } from "../../core/utilis/constants";
+import './style.css'
+import regsterImage from '../../Imgs/register.png'; 
 
 const Register= () => {
     const [ form ] = Form.useForm();
@@ -24,8 +26,10 @@ const Register= () => {
     };
 
     return (
-        <div id='antd_container'>
+        <div id='register'>
+        <img src={ regsterImage }></img>
         <Form onFinish={ handleRegister } layout='vertical' form={ form }>
+            <p>REGISTER</p>
             <Form.Item
             label='First name'
             name='firstName'
@@ -66,10 +70,9 @@ const Register= () => {
             >
             <Input.Password placeholder="Password"/>
             </Form.Item>
-            <Button linear='gradient' htmlType="submit" loading={ loading }>Sign up</Button>
-
-            <Link to={ROUTE_CONSTANTS.LOGIN}>Sign up</Link>
-
+            <Button className='button' htmlType="submit" loading={ loading }>Sign up</Button>
+            <br/>
+            <span>Already have an account?</span><Link to={ROUTE_CONSTANTS.LOGIN}>Sign up</Link>
         </Form>
         </div>
     )
