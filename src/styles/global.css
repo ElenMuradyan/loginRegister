@@ -1,10 +1,4 @@
-body{
-    background-image: url('..//Imgs/background.webp');
-    height: 100vh;
-    width:100%;
-    padding: 0;
+body {
     margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-image: url('../core/Imgs/background.jpg');
 }

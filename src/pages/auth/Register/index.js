@@ -1,12 +1,12 @@
 import React from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../services/firebase";
+import { auth } from "../../../services/firebase";
 import { Form, Button, Input, Row, Col } from 'antd';
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ROUTE_CONSTANTS } from "../../core/utilis/constants";
-import './style.css'
-import regsterImage from '../../Imgs/register.png'; 
+import { ROUTE_CONSTANTS } from "../../../core/utilis/constants";
+import regsterImage from '../../../core/Imgs/register.jpg'; 
+import AuthWrapper from "../../../components/sheard/AuthWrapper";
 
 const Register= () => {
     const [ form ] = Form.useForm();
@@ -26,10 +26,8 @@ const Register= () => {
     };
 
     return (
-        <div id='register'>
-        <img src={ regsterImage } alt='Register'></img>
+        <AuthWrapper title='Sign up' banner={regsterImage}>
         <Form onFinish={ handleRegister } layout='vertical' form={ form }>
-            <p>REGISTER</p>
             <Form.Item
             label='First name'
             name='firstName'
@@ -70,11 +68,11 @@ const Register= () => {
             >
             <Input.Password placeholder="Password"/>
             </Form.Item>
-            <Button className='button' htmlType="submit" loading={ loading }>Sign up</Button>
+            <Button htmlType="submit" type='primary' loading={ loading }>Sign up</Button>
             <br/>
             <span>Already have an account?</span><Link to={ROUTE_CONSTANTS.LOGIN}>Sign up</Link>
         </Form>
-        </div>
+        </AuthWrapper>
     )
 };
 

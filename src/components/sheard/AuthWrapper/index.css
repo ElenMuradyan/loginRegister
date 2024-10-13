@@ -1,0 +1,32 @@
+.auth_wrapper{
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: white;
+    margin:200px auto;
+    border-radius: 12px;
+    padding:10px
+}
+.banner_container{
+border-top-left-radius: 12px;
+border-bottom-left-radius: 12px;
+background-size: cover;
+background-position: center;
+}
+.form_container{
+border-top-right-radius: 12px;
+border-bottom-right-radius: 12px;
+}
+@media (max-width:720px) {
+    .banner_container{
+        display: none;
+    }
+    .auth_wrapper{
+        max-width: 70%;
+        margin:100px auto;
+    }
+    .form_container{
+         width: 200%;
+    }
+}
