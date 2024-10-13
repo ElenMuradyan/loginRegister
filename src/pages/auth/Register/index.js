@@ -1,7 +1,7 @@
 import React from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../services/firebase";
-import { Form, Button, Input, Row, Col } from 'antd';
+import { Form, Button, Input } from 'antd';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ROUTE_CONSTANTS } from "../../../core/utilis/constants";
